@@ -97,7 +97,8 @@ public class SimboluVirknes {
 			}
 		}
 		
-		
+		System.out.println("Visi garākie vārdi ir: " + visiGarakie);
+		System.out.println();
 		
 		
 		
