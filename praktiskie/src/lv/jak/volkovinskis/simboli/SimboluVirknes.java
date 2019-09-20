@@ -73,16 +73,41 @@ public class SimboluVirknes {
 		
 		//10.Sadalīt simbolu virkni pa vārdiem. 
 		
-		String text4 = text3.replace(",", " ");
-		String text5 = text4.replace(" " , ":" );
+		String text4 = text3.replace(",", "");
+		String text5 = text4.replace("." , "" );
 		System.out.println("" + text5.split(":"));
 		System.out.println();
 		
 		//11. Atrast garāko vārdu. Ja vairākiem vārdiem vienāds garums, izvadīt tos visus. 
 		
+		String text6 = text.replace(".", "");
+		text6 = text.replace(",", "");
 		
-		String[] word = text.split("  ");
-		String garakaisvards= " " ;
+		String[] vardi = text.split("  ");
+		String garakais= "" ;
+		String visiGarakie = "" ;
+		
+		for(String vards : vardi) { 
+			if(vards.length() > garakais.length()) {
+				garakais = vards ;
+				visiGarakie = vards ;
+			}
+			else if (vards.length() == garakais.length()) {
+				visiGarakie += ("," + vards) ;
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		System.out.println();
 		
