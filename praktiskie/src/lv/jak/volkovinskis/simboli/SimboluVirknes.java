@@ -4,6 +4,7 @@ public class SimboluVirknes {
 
 	public static void main(String[]args) {
 		
+		
 		String text = "Datorsistēmu tehniķis strādā organizācijās vai pie individuāliem datorlietotājiem,"
 				+ " kur sniedz konsultācijas darbā ar datortehniku,"
 				+ " programmatūru un biroja tehniku, uzstāda,"
@@ -99,17 +100,6 @@ public class SimboluVirknes {
 		
 		System.out.println("Visi garākie vārdi ir: " + visiGarakie);
 		System.out.println();
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		System.out.println();
 		
 		
