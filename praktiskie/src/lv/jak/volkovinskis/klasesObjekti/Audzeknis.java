@@ -31,5 +31,5 @@ public class Audzeknis {
 		this.kurss = kurss;
 	}
 	
-	
+
 }
