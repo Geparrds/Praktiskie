@@ -26,9 +26,13 @@ public class Saraksts {
 		
 	switch (darbiba) {
 	case 1:
-		System.out.println();
-		String vards = input.next();
 		
+		System.out.println();
+		String vards = input.next();	
+		System.out.println();
+		
+		
+	
 		break;
 
 	case 2 :

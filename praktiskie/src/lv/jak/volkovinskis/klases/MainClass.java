@@ -5,13 +5,18 @@ public class MainClass {
 	public static void main (String []args) {
 		
 		//1.Autors
-		
+	/*	
 		Autors autors = new Autors () ;
+		1.Izmantojas datu tips klases
+		2.Caur mainīgo String, kas ir gan kā mainīgais, gan klase, tas piešķir katram klases objektam savu vērtību
 		
-		autors.vards = "Niks" ;
-		autors.uzvards = "Volkovinskis" ;
-		autors.dzimsanasgads = 2003 ;
-		autors.tautiba = "Latvietis" ;
+		Pievienojas no klases Autors, un izveido jaunu mainīgo autors, ar kuru turpmāk varēs rīkoties
+		autors.vards = "Niks" ; (Domāts izvadei, kad startē programmu)+
+		autors.uzvards = "Volkovinskis" ; +
+		autors.dzimsanasgads = 2003 ;+
+		autors.tautiba = "Latvietis" ;+ tika definēta Autora klasē, domāts, izvadei
+	*/
+		
 		
 		Zanrs zanrs = new Zanrs () ;
 		zanrs.nosaukums = "Fantāzija" ;
