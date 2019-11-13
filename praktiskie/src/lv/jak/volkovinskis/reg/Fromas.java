@@ -1,16 +1,17 @@
 package lv.jak.volkovinskis.reg;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
-
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -23,7 +24,7 @@ public class Fromas extends JFrame implements ActionListener {
 
 	///Definešana
 	JPanel panel;
-	JLabel vards,uzvards,elektriba,rekinaNR,emailL,telefonaNR, summa;
+	JLabel vards,uzvards,elektriba,rekinaNR,emailL,telefonaNR;
 	JTextField vardsField, uzvardsField, rekinaNRF, emailF,telefonaNRT, elektribaF;
 	JList<String> availableList, selectedList;
 	JButton allToSelectedBTN, toSelectedBTN, allToAvailableBTN, toAvailableBTN, addBTN, cancelBTN;
@@ -36,8 +37,8 @@ public class Fromas extends JFrame implements ActionListener {
 	public Fromas() {
 		setBounds(100, 150, 640, 250);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setTitle("TET.lv");
-		setResizable(false);
+		setTitle("TET");
+		setResizable(true);
 		init();
 
 		setContentPane(panel);
@@ -87,20 +88,22 @@ public class Fromas extends JFrame implements ActionListener {
 		addBTN = new JButton("Aprēķināt");
 		addBTN.setBounds(130, 165, 100, 30);
 		addBTN.addActionListener(this);
-		
-		
-		summa = new JLabel("Summa:",SwingConstants.RIGHT);
-		
+		addBTN.setBackground(Color.cyan);
 		
 		cancelBTN = new JButton("Cancel");
 		cancelBTN.setBounds(20, 165, 100, 30);
 		cancelBTN.addActionListener(this);
+		cancelBTN.setBackground(Color.cyan);
 		
-			
+		
+		
+		
 		panel.add(vards);panel.add(uzvards);panel.add(uzvardsField);panel.add(vardsField);
 		panel.add(emailL);panel.add(rekinaNR);panel.add(rekinaNRF);panel.add(emailF);
 		panel.add(telefonaNR);panel.add(telefonaNRT);panel.add(elektriba);panel.add(elektribaF);
-		panel.add(addBTN);panel.add(cancelBTN);panel.add(summa);
+		panel.add(addBTN);panel.add(cancelBTN);
+		
+		
 		
 	}
 
@@ -109,15 +112,26 @@ public class Fromas extends JFrame implements ActionListener {
 		if (e.getSource() == addBTN) {
 			elektribaF.getText();
 			int aprekinatspaterins = Integer.parseInt(elektribaF.getText());
-			summa.removeAll();
 			double ew = (double) (aprekinatspaterins * 0.05097);
 			DecimalFormat newrandom = new DecimalFormat("#.##");
-	        summa.setText("Summa: " + newrandom.format(ew) + ("€"));
-			summa.setBounds(-40, 140, 245, 30);
+	       
+			
+			Component frame = null;
+			JOptionPane.showMessageDialog(frame, "Summa par patēriņu ir: " + newrandom.format(ew) + ("€"));
+			Component frame2 = null;
+			JOptionPane.showMessageDialog(frame2 , "Ievaditie dati: \n"
+					+ "Vārds: " + vardsField.getText() + "\n" 
+					+ "Uzvārds: " + uzvardsField.getText() + "\n"
+					+ "Reķina Numurs: " + rekinaNRF.getText() + "\n"
+					+ "E-pasts: " + emailF.getText() + "\n"
+					+ "Talrunis: " + telefonaNRT.getText() + "\n"
+					+ "Patēriņš: " + elektribaF.getText() + "\n"
+					+ "Summa par patēriņu: " + newrandom.format(ew) + ("€")
+					);
 			 
 			 
 			 if (e.getSource() == cancelBTN) {
-				 this.dispose();
+				 
 				System.exit(0); 	///program closed
 			}
 			 
