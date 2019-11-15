@@ -93,20 +93,10 @@ public class Fromas extends JFrame implements ActionListener {
 		cancelBTN.addActionListener(this);
 		cancelBTN.setBackground(Color.cyan);
 
-		panel.add(vards);
-		panel.add(uzvards);
-		panel.add(uzvardsField);
-		panel.add(vardsField);
-		panel.add(emailL);
-		panel.add(rekinaNR);
-		panel.add(rekinaNRF);
-		panel.add(emailF);
-		panel.add(telefonaNR);
-		panel.add(telefonaNRT);
-		panel.add(elektriba);
-		panel.add(elektribaF);
-		panel.add(addBTN);
-		panel.add(cancelBTN);
+		panel.add(vards);panel.add(uzvards);panel.add(uzvardsField);panel.add(vardsField);
+		panel.add(emailL);panel.add(rekinaNR);panel.add(rekinaNRF);panel.add(emailF);
+		panel.add(telefonaNR);panel.add(telefonaNRT);panel.add(elektriba);panel.add(elektribaF);
+		panel.add(addBTN);panel.add(cancelBTN);
 
 	}
 
@@ -115,34 +105,34 @@ public class Fromas extends JFrame implements ActionListener {
 
 		if (e.getSource() == cancelBTN) {
 
-			System.exit(0);
-	}
-		
-		
+			System.exit(0); /// program closed
+		}
+
 		if (e.getSource() == addBTN) {
-		
-			if(!vardsField.getText().isEmpty() && !uzvardsField.getText().isEmpty() && !rekinaNRF.getText().isEmpty() && !emailF.getText().isEmpty() && !telefonaNRT.getText().isEmpty() && !elektribaF.getText().isEmpty()) { 
-			
-			elektribaF.getText();
-			int aprekinatspaterins = Integer.parseInt(elektribaF.getText());
-			double ew = (double) (aprekinatspaterins * 0.05097);
-			DecimalFormat newrandom = new DecimalFormat("#.##");
-   
 
-			Component frame = null;
-			JOptionPane.showMessageDialog(frame, "Summa par patēriņu ir: " + newrandom.format(ew) + ("€"));
-			Component frame2 = null;
-			JOptionPane.showMessageDialog(frame2, "Ievaditie dati: \n" + "Vārds: " + vardsField.getText() + "\n"
-					+ "Uzvārds: " + uzvardsField.getText() + "\n" + "Reķina Numurs: " + rekinaNRF.getText() + "\n"
-					+ "E-pasts: " + emailF.getText() + "\n" + "Talrunis: " + telefonaNRT.getText() + "\n" + "Patēriņš: "
-					+ elektribaF.getText() + "\n" + "Summa par patēriņu: " + newrandom.format(ew) + ("€"));
+			if (!vardsField.getText().isEmpty() && !uzvardsField.getText().isEmpty() && !rekinaNRF.getText().isEmpty()
+					&& !emailF.getText().isEmpty() && !telefonaNRT.getText().isEmpty()
+					&& !elektribaF.getText().isEmpty()) {
 
-			/// program closed
-			}
-			else {
+				elektribaF.getText();
+				int aprekinatspaterins = Integer.parseInt(elektribaF.getText());
+				double ew = (double) (aprekinatspaterins * 0.05097);
+				DecimalFormat newrandom = new DecimalFormat("#.##");
+
+				Component frame = null;
+				JOptionPane.showMessageDialog(frame, "Summa par patēriņu ir: " + newrandom.format(ew) + ("€"));
+				Component frame2 = null;
+				JOptionPane.showMessageDialog(frame2,
+						"Ievaditie dati: \n" + "Vārds: " + vardsField.getText() + "\n" + "Uzvārds: "
+								+ uzvardsField.getText() + "\n" + "Reķina Numurs: " + rekinaNRF.getText() + "\n"
+								+ "E-pasts: " + emailF.getText() + "\n" + "Talrunis: " + telefonaNRT.getText() + "\n"
+								+ "Patēriņš: " + elektribaF.getText() + "\n" + "Summa par patēriņu: "
+								+ newrandom.format(ew) + ("€"));
+
+			} else {
 				Component frame3 = null;
 				JOptionPane.showMessageDialog(frame3, "Programmu nevar palaist tālāk, jo visi lauki nav aizpildīti");
-				
+
 			}
 		}
 	}
