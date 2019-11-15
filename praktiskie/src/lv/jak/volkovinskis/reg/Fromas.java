@@ -119,9 +119,9 @@ public class Fromas extends JFrame implements ActionListener {
 				double ew = (double) (aprekinatspaterins * 0.05097);
 				DecimalFormat newrandom = new DecimalFormat("#.##");
 
-				Component frame = null;
+				Component frame = panel;
 				JOptionPane.showMessageDialog(frame, "Summa par patēriņu ir: " + newrandom.format(ew) + ("€"));
-				Component frame2 = null;
+				Component frame2 = panel;
 				JOptionPane.showMessageDialog(frame2,
 						"Ievaditie dati: \n" + "Vārds: " + vardsField.getText() + "\n" + "Uzvārds: "
 								+ uzvardsField.getText() + "\n" + "Reķina Numurs: " + rekinaNRF.getText() + "\n"
@@ -130,7 +130,7 @@ public class Fromas extends JFrame implements ActionListener {
 								+ newrandom.format(ew) + ("€"));
 
 			} else {
-				Component frame3 = null;
+				Component frame3 = panel;
 				JOptionPane.showMessageDialog(frame3, "Programmu nevar palaist tālāk, jo visi lauki nav aizpildīti");
 
 			}
